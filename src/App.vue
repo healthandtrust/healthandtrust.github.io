@@ -35,7 +35,7 @@ export default {
             this.pages.set(this.formatUrl(fileContent[0]), fileContent[1])
           } else {
             const split = fileContent[0].split("/")
-            if (!this.pages.has(split[0])) {
+            if (!this.pages.has(this.formatUrl(split[0]))) {
               this.pages.set(this.formatUrl(split[0]), new Map())
             }
             this.pages.get(this.formatUrl(split[0])).set(this.formatUrl(split[1]), fileContent[1])

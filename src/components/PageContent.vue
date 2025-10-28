@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <!-- TODO: look into render functions? -->
-    {{ content }}
+    <p style="white-space: pre-line">{{ content }}</p>
   </section>
 </template>
 
@@ -27,14 +27,18 @@ export default {
           })
         }
       })
+    },
+    processContent() {
     }
   },
   mounted() {
     this.loadPageContent()
+    this.processContent()
   },
   watch: {
     activePage() {
       this.loadPageContent()
+      this.processContent()
     }
   }
 }
